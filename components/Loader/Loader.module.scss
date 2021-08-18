@@ -1,0 +1,36 @@
+@keyframes spinAnimation {
+    0% {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(180deg);    
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+ }
+
+.loader {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2000;
+    background-color: var(--color-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .spinner {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        border: 1rem solid transparent;
+        border-top-color: var(--color-primary);
+        border-bottom-color: var(--color-primary);
+        animation: spinAnimation 0.8s linear infinite;
+    }
+}

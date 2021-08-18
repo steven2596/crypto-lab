@@ -1,0 +1,162 @@
+.coin {
+    width: 100%;
+    padding: 0 5rem;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--color-grey-light);
+
+        &_left {
+            display: flex;
+            align-items: center;
+
+            & .image {
+                height: 10rem;
+            }
+
+            & .group {
+                margin-left: 2rem;
+                display: flex;
+                flex-direction: column;
+            }
+
+            & .rank {
+                font-size: 2rem;
+                background-color: var(--color-primary);
+                padding: 0.3rem 1rem;
+                border-radius: 1rem;
+                align-self: flex-start;
+                margin-bottom: 2rem;
+            }
+
+            & .name {
+                font-weight: 600;
+                font-size: 3rem;
+
+                & span {
+                    text-transform: uppercase;
+                    margin-left: 2rem;
+                    font-size: 2.5rem;
+                    color: var(--color-grey-dark);
+                }
+            }
+
+        }
+
+        &_right {
+
+            & .price_usd {
+                display: flex;
+                align-items: center;
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+            }
+
+            & .price_btc {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+
+                & .price {
+                    font-size: 1.8rem;
+                }
+
+                & .percentage {
+                    font-size: 1.8rem;
+                    margin-left: 1rem;
+
+                    & .arrow_positive {
+                        fill: var(--color-green);
+                    }
+
+                    & .arrow_negative {
+                        fill: var(--color-red);
+                    }
+                }
+
+                & .positive_btc {
+                    color: var(--color-green);
+                 }
+     
+                & .negative_btc {
+                     color: var(--color-red);
+                }
+
+                
+            }
+
+            & .percentage {
+                display: flex;
+                align-items: center;
+                margin-left: 3rem;
+                padding: 0.5rem;
+                border-radius: 1rem;
+                font-size: 2rem;
+
+                & .arrow_icon {
+                    fill: var(--color-grey-light);
+                }
+
+                & .number {
+                 
+                }
+            }
+
+            & .positive {
+               background-color: var(--color-green);
+            }
+
+            & .negative {
+                background-color: var(--color-red);
+            }
+
+            
+        }
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 5rem;
+        margin-top: 10rem;
+
+        & .content_box {
+            flex-basis: 20%;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--color-secondary);
+            color: var(--color-grey-light);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all .3s ease-out;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.15);
+                background-color: var(--color-primary);
+                
+            }
+
+            & .number {
+                font-size: 2rem;
+                margin-bottom: 3rem;
+                font-family: var(--font-secondary);
+                letter-spacing: 1px;
+
+                & span {
+                    margin-left: 3rem;
+                    opacity: 0.7;
+                }
+            }
+
+            & .title {
+                font-size: 2rem;
+                
+                font-weight: 300;
+                letter-spacing: 2px;
+            }
+        }
+    }
+}

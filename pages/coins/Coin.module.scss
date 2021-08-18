@@ -1,0 +1,37 @@
+.coin {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 7rem;
+
+    &__image {
+        width: 20rem;
+    }
+
+    &__name {
+        color: white;
+        font-size: 3rem;
+        margin-top: 7rem;
+    }
+
+    &__button {
+        position: absolute;
+        top: 3rem;
+        right: 3rem;
+        font-size: 2rem;
+        background-color: transparent;
+        border: 3px solid white;
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 1rem;
+        transition: all .3s;
+        cursor: pointer;
+        
+        &:hover {
+            background-color: rgb(0, 119, 255);
+            border: 3px solid rgb(0, 119, 255);
+        }
+    }
+}

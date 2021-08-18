@@ -1,0 +1,61 @@
+.coin {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-secondary);
+    padding: 1.5rem 2.5rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    text-align: center;
+
+    &:not(:last-child) {
+        margin-bottom: 1.5rem;
+    }
+
+    & span {
+        font-size: 1.8rem;
+    }
+
+    &__rank {
+        flex-basis: 5%;
+        
+    }
+
+    &__image {
+        width: 3rem;
+    }
+
+    &__name {
+        text-align: left;
+        flex-basis: 10%;
+    }
+
+    &__symbol {
+        text-align: left;
+        flex-basis: 8%;
+        text-transform: uppercase;
+    }
+
+    &__price,
+    &__volume,
+    &__marketCap {
+        text-align: right;
+        flex-basis: 15%;
+    }
+
+    &__percent_1h,
+    &__percent_24h,
+    &__percent_7d {
+        text-align: right;
+        flex-basis: 5%;
+    }
+
+    &__percent_positive {
+        color: var(--color-green);
+    }
+
+    &__percent_negative {
+        color: var(--color-red);
+    }
+}

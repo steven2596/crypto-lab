@@ -1,0 +1,64 @@
+:root {
+    --color-dark: #000000;
+    
+    --color-primary: #0466c8;
+    --color-secondary: #303030;
+    --color-primary-light: #57abff;
+    --color-primary-dark: #001360;
+
+    --color-red: rgb(239, 35, 60);
+    --color-green: #2dc653;
+    --color-grey-light: #e5e5e5;
+    --color-grey-dark: #5E5E5E;
+
+    --box-shadow: 0px 0px 10px 5px #e5e5e5;
+
+    --font-primary: 'Roboto', sans-serif;
+    --font-secondary: 'Noto Sans JP', sans-serif;;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; // 1rem = 10px
+
+    @media only screen and (max-width: 1400px) {
+        font-size: 50%;
+    }
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    background-color: var(--color-dark);
+    font-family: var(--font-primary);
+}
+
+a:link,
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+//For customized scrollbar
+::-webkit-scrollbar {
+    width: 1rem;
+}
+  
+::-webkit-scrollbar-track {
+    border-radius: 1frem;
+}
+   
+::-webkit-scrollbar-thumb {
+    background: var(--color-grey-light); 
+    border-radius: 1rem;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-grey-light); 
+}

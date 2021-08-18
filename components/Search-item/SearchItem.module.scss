@@ -1,0 +1,31 @@
+.searchItem {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    transition: all .1s ease-out;
+    color: var(--color-grey-dark);
+
+    &:not(:last-child) {
+        margin-bottom: 0.5rem;
+    }
+
+    &:hover {
+        background-color: var(--color-primary-light);
+    }
+
+    &__image {
+        width: 4rem;
+    }
+
+    &__name {
+        font-size: 2rem;
+        margin-left: 2rem;
+    }
+
+    &__rank {
+        margin-left: auto;
+        font-size: 1.8rem;
+    }
+}
