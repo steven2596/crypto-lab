@@ -13,6 +13,15 @@ const Coin = () => {
     const [currentCoin, setCurrentCoin] = useState({});
     const [isCoinLoading, setIsCoinLoading] = useState(false);
 
+    const formatData = data => {
+        return data.map(el => {
+            return {
+                x: el[0],
+                y: el[1].toFixed(2)
+            }
+        })
+    }
+
     useEffect(() => {
         const fetchCurrentCoinData = async () => {
             setIsCoinLoading(true);
@@ -65,9 +74,9 @@ const Coin = () => {
 
                 const currentCoinData = {
                     coinData: coinData,
-                    day: day.data.prices,
-                    week: week.data.prices,
-                    month: month.data.prices
+                    day: formatData(day.data.prices),
+                    week: formatData(week.data.prices),
+                    month: formatData(month.data.prices)
                 };
 
                 setCurrentCoin(currentCoinData);

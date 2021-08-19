@@ -1,34 +1,55 @@
-import { useEffect, useRef } from 'react';
-import { Line } from 'react-chartjs-2';
+import { useState, useEffect, useRef } from 'react';
+import Chartjs from "chart.js";
 import { chartOptions } from './chartConfig';
 import styles from './CoinChart.module.scss';
 
-const CoinChart = () => {
-    const state = {
-        labels: ['January', 'February', 'March',
-            'April', 'May', 'June'],
-        datasets: [
-            {
-                label: 'Prices',
-                fill: false,
-                lineTension: 0.5,
-                backgroundColor: 'rgb(4, 102, 200)',
-                borderColor: 'rgb(239, 35, 60)',
-                pointRadius: 0,
-                data: [65, 59, 80, 81, 56, 75]
-            }
-        ]
-    }
+const CoinChart = ({ coin }) => {
+    const chartRef = useRef();
+    const { day, week, year, coinData } = coin;
+    const [timeFormat, setTimeFormat] = useState("24h");
+
+    const determineTimeFormat = () => {
+        switch (timeFormat) {
+            case "24h":
+                return day;
+            case "7d":
+                return week;
+            case "1y":
+                return year;
+            default:
+                return day;
+        }
+    };
+
+    useEffect(() => {
+        if (chartRef && chartRef.current && coinData) {
+
+            const chartInstance = new Chartjs(chartRef.current, {
+                type: "line",
+                data: {
+                    datasets: [
+                        {
+                            label: 'Price changes within 24hrs',
+                            labelColor: '#ffffff',
+                            data: determineTimeFormat(),
+                            borderWidth: 3,
+                            borderColor: "rgb(4, 102, 200)",
+                            pointRadius: 0,
+                            pointHoverBackgroundColor: "#2dc653"
+                        },
+                    ],
+                },
+                options: {
+                    ...chartOptions,
+                },
+            });
+        }
+    });
 
 
     return (
         <div className={styles.chart_container}>
-            <Line
-                width={250}
-                height={250}
-                data={state}
-                options={chartOptions}
-            />
+            <canvas ref={chartRef} id="myChart" width={500} height={500}></canvas>
         </div>
 
 
